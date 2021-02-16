@@ -11,11 +11,11 @@ const proses = (params, batas) => {
 	for (let i = 0; i < batas; i++) {
 		arr.push(hasil[i]);
 	}
-	return arr;
+	console.log(arr);
 }
 
 const searchName = (keyword, jumlah, callback) => {
-	return callback(keyword, jumlah);
+	callback(keyword, jumlah);
 }
 
-console.log(searchName("an", 3, proses));
+searchName("an", 3, proses);
