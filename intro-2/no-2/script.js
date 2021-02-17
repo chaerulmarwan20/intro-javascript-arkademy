@@ -5,17 +5,21 @@ const name = [
 	"Ella", "Faith", "Olivia", "Penelope"
 ];
 
-const proses = (params, batas) => {
-	const hasil = name.filter(n => n.toLowerCase().includes(params));
+const filter = (result, limit) => {
 	let arr = [];
-	for (let i = 0; i < batas; i++) {
-		arr.push(hasil[i]);
+	for (let i = 0; i < limit; i++) {
+		arr.push(result[i]);
 	}
 	console.log(arr);
 }
 
-const searchName = (keyword, jumlah, callback) => {
-	callback(keyword, jumlah);
+const process = (keyword, limit, filter) => {
+	const result = name.filter(n => n.toLowerCase().includes(keyword));
+	filter(result, limit);
 }
 
-searchName("an", 3, proses);
+const searchName = (keyword, limit, callback) => {
+	callback(keyword, limit, filter);
+}
+
+searchName("an", 3, process);
