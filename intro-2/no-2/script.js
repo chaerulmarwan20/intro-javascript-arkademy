@@ -5,7 +5,7 @@ const name = [
 	"Ella", "Faith", "Olivia", "Penelope"
 ];
 
-const limitName = (result, limit, pesan = null) => {
+const limitName = (result, limit, message = null) => {
 	let arr = [];
 	for (let i = 0; i < limit; i++) {
 		if (result[i] === undefined) {
@@ -13,9 +13,9 @@ const limitName = (result, limit, pesan = null) => {
 		}
 		arr.push(result[i]);
 	}
-	if (pesan != null) {
+	if (message !== null) {
 		console.log(arr);
-		console.log(pesan);
+		console.log(message);
 	} else {
 		console.log(arr);
 	}
