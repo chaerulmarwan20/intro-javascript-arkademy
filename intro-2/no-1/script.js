@@ -27,7 +27,7 @@ let nama = "Chaerul";
 /**
  * Method String.trim() berfungsi untuk menghapus karakter spasi atau string kosong di awal dan di akhir String.
  */
-let alamat = " Sumedang "
+let alamat = " Sumedang ";
 // console.log(alamat.trim());
 
 // 5. join()
