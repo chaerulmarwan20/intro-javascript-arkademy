@@ -27,7 +27,7 @@ const searchName = (keyword, limit, limitName) => {
 		return console.log("Tidak ada nama yang cocok");
 	} else {
 		if (limit > result.length) {
-			limitName(result, limit, `Dari ${limit} permintaan, hanya ${result.length} yang ditemukan`);
+			limitName(result, limit, `Dari ${limit} data yang diminta, hanya ${result.length} yang ditemukan`);
 		} else {
 			limitName(result, limit);
 		}
