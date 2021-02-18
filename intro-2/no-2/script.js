@@ -5,7 +5,7 @@ const name = [
 	"Ella", "Faith", "Olivia", "Penelope"
 ];
 
-const filter = (result, limit) => {
+const limitName = (result, limit) => {
 	let arr = [];
 	for (let i = 0; i < limit; i++) {
 		arr.push(result[i]);
@@ -13,13 +13,13 @@ const filter = (result, limit) => {
 	console.log(arr);
 }
 
-const process = (keyword, limit, filter) => {
+const filterName = (keyword, limit, limitName) => {
 	const result = name.filter(n => n.toLowerCase().includes(keyword));
-	filter(result, limit);
+	limitName(result, limit);
 }
 
 const searchName = (keyword, limit, callback) => {
-	callback(keyword, limit, filter);
+	callback(keyword, limit, limitName);
 }
 
-searchName("an", 3, process);
+searchName("an", 3, filterName);
