@@ -12,7 +12,7 @@ let angka = 456.123;
  * Method Math.random() berfungsi untuk menghasilkan angka acak dalam setiap pemanggilan.
  * Nilai akhir berada dalam rentang 0 dan 1.
  */
-let angkaAcak = Math.random();
+let angkaAcak = Math.floor(Math.random() * 10) + 1;
 // console.log(angkaAcak);
 
 // 3. concat()
@@ -43,7 +43,7 @@ let arr = [2, 5, 8, "a", "b", "c"];
  * Method ini berfungsi untuk mereduce elemen array menjadi single value dengan menjumlahkan setiap elemen array-nya (dari kiri ke kanan)
  */
 const arrAngka = [1, 2, 3, 4, 5];
-// const hasil = arrAngka.reduce((a, b) => a + b, 0);
+// const hasil = arrAngka.reduce((a, b) => a + b, 1);
 // console.log(hasil);
 
 // 7. every()

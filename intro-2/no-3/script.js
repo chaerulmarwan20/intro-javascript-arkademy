@@ -1,7 +1,7 @@
 const seleksiNilai = (nilaiAwal, nilaiAkhir, dataArray) => {
 	if (nilaiAwal > nilaiAkhir) {
 		return console.log("Nilai akhir harus lebih besar dari nilai awal");
-	} else if (typeof nilaiAwal !== "number" && typeof nilaiAwal !== "number") {
+	} else if (typeof nilaiAwal !== "number" || typeof nilaiAkhir !== "number") {
 		return console.log("Nilai awal dan nilai akhir harus bertipe number");
 	} else if (dataArray.length > 5) {
 		let result = dataArray.filter(item => {

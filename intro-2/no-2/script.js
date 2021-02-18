@@ -5,7 +5,7 @@ const name = [
 	"Ella", "Faith", "Olivia", "Penelope"
 ];
 
-const limitName = (result, limit) => {
+const limitName = (result, limit, pesan = null) => {
 	let arr = [];
 	for (let i = 0; i < limit; i++) {
 		if (result[i] === undefined) {
@@ -13,20 +13,25 @@ const limitName = (result, limit) => {
 		}
 		arr.push(result[i]);
 	}
-	console.log(arr);
+	if (pesan != null) {
+		console.log(arr);
+		console.log(pesan);
+	} else {
+		console.log(arr);
+	}
 }
 
-const filterName = (keyword, limit, limitName) => {
+const searchName = (keyword, limit, limitName) => {
 	const result = name.filter(n => n.toLowerCase().includes(keyword));
 	if (result.length === 0) {
 		return console.log("Tidak ada nama yang cocok");
 	} else {
-		limitName(result, limit);
+		if (limit > result.length) {
+			limitName(result, limit, `Dari ${limit} permintaan, hanya ${result.length} yang ditemukan`);
+		} else {
+			limitName(result, limit);
+		}
 	}
 }
 
-const searchName = (keyword, limit, callback) => {
-	callback(keyword, limit, limitName);
-}
-
-searchName("an", 3, filterName);
+searchName("an", 3, limitName);
