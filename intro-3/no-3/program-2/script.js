@@ -2,27 +2,27 @@ const process = () => {
 	return new Promise((resolve, reject) => {
 		const sisi = document.querySelector('.input-sisi').value;
 
-		console.log(typeof sisi);
+		setTimeout(() => {
+			if (sisi === '') {
+				return reject(new Error('Sisi harus diisi!'));
+			} else if (sisi < 1) {
+				return reject(new Error('Sisi harus lebih dari 0(nol)!'));
+			} else {
+				const persegiContainer = document.querySelector('.persegi-container');
 
-		if (sisi === '') {
-			return reject(new Error('Sisi harus diisi!'));
-		} else if (sisi < 1) {
-			return reject(new Error('Sisi harus lebih dari 0(nol)!'));
-		} else {
-			const persegiContainer = document.querySelector('.persegi-container');
+				const textSisi = document.querySelectorAll('.sisi');
+				textSisi.forEach(s => {
+					s.innerHTML = sisi;
+				});
 
-			const textSisi = document.querySelectorAll('.sisi');
-			textSisi.forEach(s => {
-				s.innerHTML = sisi;
-			});
+				const luas = sisi * sisi;
+				const keliling = 4 * sisi;
 
-			const luas = sisi * sisi;
-			const keliling = 4 * sisi;
+				persegiContainer.classList.remove('d-none');
 
-			persegiContainer.classList.remove('d-none');
-
-			return resolve([luas, keliling]);
-		}
+				return resolve([luas, keliling]);
+			}
+		}, 500);
 	});
 }
 
