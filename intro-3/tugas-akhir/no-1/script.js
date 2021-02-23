@@ -1,5 +1,4 @@
-function palindrom() {
-	let str = prompt("Masukkan kata");
+function palindrom(str) {
 	if (str !== '' && str !== null && str.length > 2) {
 		let result = '';
 		for (let i = str.length - 1; i >= 0; i--) {
@@ -8,13 +7,13 @@ function palindrom() {
 		str = str.toLowerCase();
 		result = result.toLowerCase();
 		if (str === result) {
-			document.body.innerHTML = 'Palindrom';
+			return console.log('Palindrom');
 		} else {
-			document.body.innerHTML = 'Bukan Palindrom';
+			return console.log('Bukan Palindrom');
 		}
 	} else {
-		alert("Panjang karakter minimal 3");
-		return palindrom();
+		return console.log("Panjang karakter minimal 3!");
 	}
 }
-palindrom();
+palindrom("malam");
+palindrom("pagi");
