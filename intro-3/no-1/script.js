@@ -19,7 +19,7 @@ const cekHariKerja = (day) => {
 			} else {
 				reject(new Error(`Hari ${day} bukan hari kerja.`));
 			}
-		}, 500);
+		}, 3000);
 	});
 }
 
