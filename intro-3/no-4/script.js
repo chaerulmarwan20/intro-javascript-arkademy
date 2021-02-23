@@ -6,7 +6,7 @@ const getData = async url => {
 	}
 
 	try {
-		const result = await fetch(url)
+		const result = await fetch(url);
 		const user = await result.json();
 		user.map(item => {
 			console.log(item.name);

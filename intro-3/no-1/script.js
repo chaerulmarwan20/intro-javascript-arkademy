@@ -23,8 +23,7 @@ const cekHariKerja = (day) => {
 	});
 }
 
-// then
-// catch
+// then catch
 cekHariKerja('minggu')
 	.then(res => console.log(res))
 	.catch(err => console.log(err.message));
@@ -34,8 +33,7 @@ cekHariKerja('minggu')
  * sedangkan, catch berfungsi untuk menangkap atau memproses hasil dari reject
  */
 
-// try
-// catch
+// try catch
 const print = async () => {
 	try {
 		const result = await cekHariKerja('senin');
