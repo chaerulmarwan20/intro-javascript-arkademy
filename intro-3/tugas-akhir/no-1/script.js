@@ -15,5 +15,5 @@ function palindrom(str) {
 		return console.log("Panjang karakter minimal 3!");
 	}
 }
-palindrom("malam");
+// palindrom("malam");
 palindrom("pagi");

@@ -7,15 +7,9 @@ const getData = async url => {
 
 	try {
 		const result = await fetch(url)
-			.then(response => {
-				if (!response.ok) {
-					throw new Error('Server error!!');
-				}
-				return response.json();
-			})
-			.then(response => response);
-		result.map(item => {
-			console.log(`Name: ${item.name}`);
+		const user = await result.json();
+		user.map(item => {
+			console.log(item.name);
 		});
 	} catch (err) {
 		console.log(err.message);
