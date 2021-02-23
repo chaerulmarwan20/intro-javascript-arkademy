@@ -2,12 +2,12 @@ const process = () => {
 	return new Promise((resolve, reject) => {
 		const sisi = document.querySelector('.input-sisi').value;
 
-		setTimeout(() => {
-			if (sisi === '') {
-				return reject(new Error('Sisi harus diisi!'));
-			} else if (sisi < 1) {
-				return reject(new Error('Sisi harus lebih dari 0(nol)!'));
-			} else {
+		if (sisi === '') {
+			return reject(new Error('Sisi harus diisi!'));
+		} else if (sisi < 1) {
+			return reject(new Error('Sisi harus lebih dari 0(nol)!'));
+		} else {
+			setTimeout(() => {
 				const persegiContainer = document.querySelector('.persegi-container');
 
 				const textSisi = document.querySelectorAll('.sisi');
@@ -21,8 +21,9 @@ const process = () => {
 				persegiContainer.classList.remove('d-none');
 
 				return resolve([luas, keliling]);
-			}
-		}, 500);
+			}, 500);
+		}
+
 	});
 }
 

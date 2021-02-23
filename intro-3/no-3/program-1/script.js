@@ -4,14 +4,14 @@ const process = () => {
 
 		const namaBarang = document.querySelector('.nama-brg').value;
 		const jmlBarang = document.querySelector('.jml-brg').value;
-		setTimeout(() => {
-			if (namaBarang === '' || jmlBarang === '') {
-				return reject(new Error('Nama & jumlah barang tidak boleh kosong!'));
-			} else if (barang.includes(namaBarang.toLowerCase()) === false) {
-				return reject(new Error('Barang tidak ada!'));
-			} else if (jmlBarang < 1) {
-				return reject(new Error('Jumlah barang harus lebih dari nol(0)!'));
-			} else {
+		if (namaBarang === '' || jmlBarang === '') {
+			return reject(new Error('Nama & jumlah barang tidak boleh kosong!'));
+		} else if (barang.includes(namaBarang.toLowerCase()) === false) {
+			return reject(new Error('Barang tidak ada!'));
+		} else if (jmlBarang < 1) {
+			return reject(new Error('Jumlah barang harus lebih dari nol(0)!'));
+		} else {
+			setTimeout(() => {
 				const [harga, total] = getCount(namaBarang, jmlBarang);
 				const diskon = getDiscount(total);
 				const bayar = total - diskon;
@@ -21,8 +21,8 @@ const process = () => {
 
 				const dataModal = showTotal(namaBarang, harga, jmlBarang, total, diskon, bayar);
 				return resolve(dataModal);
-			}
-		}, 500);
+			}, 500);
+		}
 	});
 }
 
